@@ -1,55 +1,47 @@
 # Ex12 Add Elements from an Array into a TreeSet
-## DATE:15-11-25
+## DATE: 12/09/25
 ## AIM:
 To write a Java program that adds elements from an array into a TreeSet and displays the elements in sorted order.
 ## Algorithm
-1.Start and create an integer array.
-
-2.Create an empty TreeSet.
-
-3.Traverse the array using a loop.
-
-4.Insert each array element into the TreeSet.
-
-5.Display the TreeSet (elements appear in sorted order automatically). 
-  
+1. Read input array
+2. Create empty TreeSet
+3. Insert all array elements into TreeSet
+4. Print TreeSet elements (in sorted order)
 
 ## Program:
 ```
 /*
 Program that adds elements from an array into a TreeSet and displays the elements in sorted order.
-Developed by: Dharanya N
-RegisterNumber: 212223230044
+Developed by:DHARANYA N 
+RegisterNumber:  212223230044
 */
+
 import java.util.*;
 
 public class ArrayToTreeSet {
+
+    public static TreeSet<Integer> convertArrayToTreeSet(int[] arr) {
+        // Type Your Code Here.
+        TreeSet<Integer> set = new TreeSet<>();
+        for (int a:arr)
+            set.add(a);
+        return set;
+
+    }
+
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
-
-        // Take array size from user
-        System.out.print("Enter number of elements: ");
         int n = sc.nextInt();
-
         int[] arr = new int[n];
-
-        // Input array elements
-        System.out.println("Enter " + n + " integers:");
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
 
-        // Create a TreeSet
-        TreeSet<Integer> set = new TreeSet<>();
-
-        // Add array elements to TreeSet
-        for (int num : arr) {
-            set.add(num);
+        TreeSet<Integer> treeSet = convertArrayToTreeSet(arr);
+        System.out.println("Elements in TreeSet:");
+        for (int num : treeSet) {
+            System.out.println(num);
         }
-
-        // Display sorted elements
-        System.out.println("Elements in sorted order (TreeSet): " + set);
 
         sc.close();
     }
@@ -58,9 +50,8 @@ public class ArrayToTreeSet {
 ```
 
 ## Output:
-<img width="620" height="280" alt="image" src="https://github.com/user-attachments/assets/d6bd387c-0acc-465f-ac38-9b7f3f38e35c" />
 
-
+<img width="728" height="633" alt="image" src="https://github.com/user-attachments/assets/22497514-1f81-4585-8cbf-b9b4ddd279ad" />
 
 ## Result:
 The program successfully adds elements from an array into a TreeSet.
