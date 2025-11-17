@@ -1,53 +1,45 @@
 # Ex11 Convert HashSet to ArrayList in Java
-## DATE: 15-11-25
+## DATE: 10/09/25
 ## AIM:
 To convert a collection of distinct integers stored in a HashSet into an ArrayList and display its contents.
 ## Algorithm
-1.Start and create an empty HashSet.
-
-2.Insert all the required integers into the HashSet.
-
-3.Create an ArrayList and pass the HashSet to its constructor.
-
-4.Store all elements of the HashSet into the ArrayList.
-
-5.Display the elements of the ArrayList.
- 
+1. Start the program.
+2. Read n
+3. Insert elements into a HashSet.
+4. Create an ArrayList from the HashSet.
+5. Print ArrayList elements.  
 
 ## Program:
 ```
 /*
 Program to To convert a collection of distinct integers stored in a HashSet into an ArrayList and display its contents.
-Developed by: Dharanya N
+Developed by:DHARANYA N
 RegisterNumber:  212223230044
 */
+
 import java.util.*;
 
 public class HashSetToArrayList {
+
+    public static ArrayList<Integer> convertToArrayList(HashSet<Integer> set) {
+        // Type Your Code Here.
+        return new ArrayList<>(set);
+    }
+
     public static void main(String[] args) {
-
-        // Create a HashSet of integers
-        HashSet<Integer> numberSet = new HashSet<>();
-
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter how many numbers you want to add: ");
         int n = sc.nextInt();
-
-        // Taking input from the user
-        System.out.println("Enter " + n + " distinct integers:");
+        HashSet<Integer> set = new HashSet<>();
         for (int i = 0; i < n; i++) {
-            numberSet.add(sc.nextInt());
+            int num = sc.nextInt();
+            set.add(num);
         }
 
-        // Convert HashSet to ArrayList
-        ArrayList<Integer> numberList = new ArrayList<>(numberSet);
-
-        // Display the ArrayList
-        System.out.println("\nArrayList contents:");
-        for (int num : numberList) {
-            System.out.println(num);
+        ArrayList<Integer> list = convertToArrayList(set);
+        System.out.println("ArrayList contents:");
+        for (int num : list) {
+            System.out.print(num + " ");
         }
-
         sc.close();
     }
 }
@@ -56,8 +48,7 @@ public class HashSetToArrayList {
 
 ## Output:
 
-<img width="678" height="428" alt="image" src="https://github.com/user-attachments/assets/7ad8f4e2-b4ec-4332-b85e-58261bdbfbeb" />
-
+<img width="611" height="748" alt="image" src="https://github.com/user-attachments/assets/446bb67e-e7e2-4c79-a139-aafbccb144b9" />
 
 ## Result:
 The program successfully converts a collection of distinct integers stored in a HashSet into an ArrayList
